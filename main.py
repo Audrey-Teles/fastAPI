@@ -2,9 +2,8 @@ from fastapi import FastAPI
 from fastapi.encoders import jsonable_encoder
 import uvicorn
 
-app = FastAPI(title="MyPortfolio",
-              description="Welcome to my portfolio, here all my programming"
-                          "skills can be manipulated as in an API, enjoy!",
+app = FastAPI(title="MyAPI",
+              description="Welcome to my test API, enjoy!",
               contact={
                   "name": "Audrey Teles",
                   "email": "audreytelesdossantos@gmail.com",
@@ -16,7 +15,7 @@ lista = []
 
 @app.get("/", tags=["Welcome"])
 async def root():
-    return {"message": "Welcome to my API for tests!"}
+    return {"message": "Welcome to my test API!"}
 
 
 @app.post("/item/{name}", tags=["Items"])
