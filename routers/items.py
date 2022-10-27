@@ -1,6 +1,8 @@
 from fastapi import APIRouter, HTTPException
 from fastapi.encoders import jsonable_encoder
 
+from model.items import Item
+
 # instância da rota de itens
 router = APIRouter(
     prefix="/items",
@@ -28,9 +30,9 @@ async def read_item(item_id: int):
 
 
 # Adicionar um item
-@router.post("/{name}")
-async def add_item(name: str):
-    items.append(name)
+@router.post("/")
+async def add_item(item: Item):
+    items.append(item.name)
     return {"message": "The item was successfully added!"}
 
 
