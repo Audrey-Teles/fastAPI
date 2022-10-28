@@ -13,8 +13,7 @@ app = FastAPI(title="MyAPI",
               },
               )
 origins = [
-    "http://localhost.tiangolo.com",
-    "https://localhost.tiangolo.com",
+    "https://mytestapi.vercel.app/",
     "http://localhost",
     "http://localhost:8080",
 ]
